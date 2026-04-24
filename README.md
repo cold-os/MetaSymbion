@@ -41,13 +41,13 @@ Its operation follows a strict "thinking–verification–execution" separation 
 
 ```mermaid
 flowchart LR
-    subgraph Cognitive Layer [RAMTN Cognitive Layer]
+    subgraph Cognitive_Layer [RAMTN Cognitive Layer]
         direction LR
         A1[Constructor] --> A2[Critic] --> A3[Observer]
         A3 -.->|Next Debate Round| A1
     end
 
-    subgraph Logic Verification Layer [Formal Logic Verification Layer]
+    subgraph Logic_Verification_Layer [Formal Logic Verification Layer]
         direction TB
         B1[Internal Consistency Check]
         B2[Belief-Behavior Consistency Check]
@@ -59,14 +59,14 @@ flowchart LR
         B4 --> B3
     end
 
-    subgraph Secure Execution Layer [CAGE Secure Execution Layer]
+    subgraph Secure_Execution_Layer [CAGE Secure Execution Layer]
         direction TB
         C1[create_folder]
         C2[write_file]
         C3[...]
     end
 
-    Cognitive Layer --> Logic Verification Layer --> Secure Execution Layer
+    Cognitive_Layer --> Logic_Verification_Layer --> Secure_Execution_Layer
 ```
 
 This system emulates the workflow of a workshop: the Thinking Workshop (Cognitive Layer), driven by an LLM, is responsible for flexible deep thinking; the Quality Inspection Station (Logic Verification Layer), independent of the LLM, performs deterministic logical consistency checks; the Cleanroom (Secure Execution Layer) executes verified plans under strictly isolated conditions. This "generation–verification" separation architecture constitutes a "runtime verification" pathway: rather than attempting to modify the model internally, an auditable logic checkpoint is inserted between its outputs and their execution. This pathway differs in approach from mainstream alignment methods based on "training-time optimization" (such as RLHF or Constitutional AI) and is positioned as a supplementary exploratory attempt.
@@ -91,24 +91,24 @@ This system emulates the workflow of a workshop: the Thinking Workshop (Cognitiv
 
 ```mermaid
 flowchart TD
-    subgraph Construction Zone
+    subgraph Construction_Zone
         C1["Certain: [...]"]
         C2["Speculative: [...]"]
         C3["Unknown: [...]"]
     end
 
-    subgraph Criticism Zone
+    subgraph Criticism_Zone
         Q1["Certain: [...]"]
         Q2["Speculative: [...]"]
         Q3["Unknown: [...]"]
     end
 
-    subgraph Thinking History
+    subgraph Thinking_History
         H["Thinking History<br/>(from Round 2 onward)"]
     end
 
-    Construction Zone --> Thinking History
-    Criticism Zone --> Thinking History
+    Construction_Zone --> Thinking_History
+    Criticism_Zone --> Thinking_History
 ```
 
 #### Debate Flow
